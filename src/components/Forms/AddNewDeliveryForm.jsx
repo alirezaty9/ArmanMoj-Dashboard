@@ -54,11 +54,11 @@ export default function AddNewDeliveryForm({ isOpen, onClose, headers, onSubmit 
 
     return (
         <div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-gray-900/50 backdrop-blur-sm"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-gray-900/50 backdrop-blur-sm md:overflow-visible overflow-y-auto md:py-0 py-4"
             onClick={handleBackdropClick}
         >
             <div
-                className="bg-white rounded-2xl shadow-xl w-full max-w-3xl m-4 animate-modal"
+                className="bg-white rounded-2xl shadow-xl w-full max-w-3xl m-4 md:h-auto min-h-[calc(100vh-2rem)] md:min-h-0 flex flex-col"
             >
                 {/* Header */}
                 <div className="flex items-center justify-center p-6 bg-gray-700 rounded-t-2xl">
@@ -69,7 +69,7 @@ export default function AddNewDeliveryForm({ isOpen, onClose, headers, onSubmit 
                 </div>
 
                 {/* Form Content */}
-                <form onSubmit={handleSubmit} className="p-6">
+                <form onSubmit={handleSubmit} className="p-6 md:block flex flex-col flex-1">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {formFields.map((field) => (
                             <div key={field.key} className="space-y-2">
