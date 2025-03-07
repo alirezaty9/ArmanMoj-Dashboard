@@ -31,7 +31,7 @@ export default function Login() {
             {/* Email Input */}
             <div className="space-y-2">
               <label className="flex items-center gap-2 text-sm font-medium text-gray-300">
-              
+
                 Email:
               </label>
               <div className="relative">
@@ -50,8 +50,8 @@ export default function Login() {
             {/* Password Input */}
             <div className="space-y-2">
               <label className="flex items-center gap-2 text-sm font-medium text-gray-300 text-right">
-               
-               Password:
+
+                Password:
               </label>
               <div className="relative">
                 <input

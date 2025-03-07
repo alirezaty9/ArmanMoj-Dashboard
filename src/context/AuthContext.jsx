@@ -12,7 +12,7 @@ export const AuthProvider =({children })=>{
 
   const login = (role) => {
     setUserAuthLevel({ role });
-    console.log(userAuthLevel)
+
 };
 
 const logout = () => {

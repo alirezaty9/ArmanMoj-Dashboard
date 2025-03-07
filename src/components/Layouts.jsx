@@ -6,7 +6,7 @@ import { AuthContext } from "../context/AuthContext";
 function Layout() {
   const { userAuthLevel } = useContext(AuthContext);
 
-useEffect
+  useEffect
 
   if (userAuthLevel === null) {
     return <Navigate to="/login" replace />;

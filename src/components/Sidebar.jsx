@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { Menu, X, Home, Box, Users, Server, Zap, User, Layers, Shield, Warehouse, LogOut, BaggageClaim } from "lucide-react";
 
 export default function Sidebar() {
-    const {  logout } = useContext(AuthContext);
+    const { logout } = useContext(AuthContext);
     // const { userAuthLevel } = useContext(AuthContext);
 
     const [isOpen, setIsOpen] = useState(false);
