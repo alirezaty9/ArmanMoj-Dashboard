@@ -7,7 +7,7 @@ export const AuthContext=createContext()
 
 
 export const AuthProvider =({children })=>{
-  const [userAuthLevel, setUserAuthLevel] = useState('null');
+  const [userAuthLevel, setUserAuthLevel] = useState(null);
 
 
   const login = (role) => {

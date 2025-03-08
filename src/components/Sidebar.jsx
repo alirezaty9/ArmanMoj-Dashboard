@@ -5,12 +5,12 @@ import { Menu, X, Home, Box, Users, Server, Zap, User, Layers, Shield, Warehouse
 
 export default function Sidebar() {
     const { logout } = useContext(AuthContext);
-    // const { userAuthLevel } = useContext(AuthContext);
+    const { userAuthLevel } = useContext(AuthContext);
 
     const [isOpen, setIsOpen] = useState(false);
     const navigate = useNavigate();
 
-    // if (!userAuthLevel || userAuthLevel.role !== "admin") return null;
+    if (!userAuthLevel || userAuthLevel.role !== "admin") return null;
 
     const toggleSidebar = () => setIsOpen(!isOpen);
 
