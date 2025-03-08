@@ -49,12 +49,13 @@ export default function EditDeliveryForm({ isOpen, onClose, headers, data, onSub
 
     return (
         <div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-gray-900/50 backdrop-blur-sm"
+            className="fixed inset-0 z-50 flex items-start justify-center py-4 overflow-y-auto md:items-center bg-gray-900/50 backdrop-blur-sm md:overflow-visible md:py-0"
             onClick={handleBackdropClick}
         >
             <div
-                className="bg-white rounded-2xl shadow-xl w-full max-w-3xl m-4 animate-modal"
+                className="bg-white rounded-2xl shadow-xl w-full max-w-3xl m-4 md:h-auto min-h-[calc(100vh-2rem)] md:min-h-0 flex flex-col"
             >
+                {/* Header */}
                 <div className="flex items-center justify-center p-6 bg-gray-700 rounded-t-2xl">
                     <div className="flex items-center gap-3">
                         <Package className="text-white" size={24} />
@@ -62,11 +63,12 @@ export default function EditDeliveryForm({ isOpen, onClose, headers, data, onSub
                     </div>
                 </div>
 
-                <form onSubmit={handleSubmit} className="p-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Form Content */}
+                <form onSubmit={handleSubmit} className="flex flex-col flex-1 p-6 md:block">
+                    <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                         {formFields.map((field) => (
                             <div key={field.key} className="space-y-2">
-                                <label className="flex flex-row-reverse items-center gap-2 text-sm font-medium text-gray-700 text-right">
+                                <label className="flex flex-row-reverse items-center gap-2 text-sm font-medium text-right text-gray-700">
                                     {getFieldIcon(field.key)}
                                     {field.title}
                                 </label>
@@ -78,7 +80,7 @@ export default function EditDeliveryForm({ isOpen, onClose, headers, data, onSub
                                             ...formData,
                                             [field.key]: e.target.value
                                         })}
-                                        className="w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 hover:border-blue-400 text-right"
+                                        className="w-full p-3 text-right transition-all duration-200 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 hover:border-blue-400"
                                         required
                                     >
                                         <option value="">انتخاب کنید</option>
@@ -108,18 +110,19 @@ export default function EditDeliveryForm({ isOpen, onClose, headers, data, onSub
                         ))}
                     </div>
 
-                    <div className="mt-8 -mx-6 -mb-6 p-6 bg-gray-700 rounded-b-2xl border-t">
+                    {/* Footer */}
+                    <div className="p-6 mt-8 -mx-6 -mb-6 bg-gray-700 border-t rounded-b-2xl">
                         <div className="flex justify-center gap-4">
                             <button
                                 type="button"
                                 onClick={onClose}
-                                className="px-6 py-3 border text-white border-gray-300 rounded-xl hover:bg-gray-50 hover:text-gray-700 font-medium"
+                                className="px-6 py-3 font-medium text-white border border-gray-300 rounded-xl hover:bg-gray-50 hover:text-gray-700"
                             >
                                 انصراف
                             </button>
                             <button
                                 type="submit"
-                                className="px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-xl hover:from-blue-600 hover:to-blue-700 font-medium flex items-center gap-2"
+                                className="flex items-center gap-2 px-6 py-3 font-medium text-white bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl hover:from-blue-600 hover:to-blue-700"
                             >
                                 <Save size={18} />
                                 ذخیره تغییرات
